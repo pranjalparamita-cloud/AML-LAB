@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linear Regression</title>
+</head>
+<body>
+
+<h1>Linear Regression</h1>
+
+<form action="/calculate" method="POST">
+
+    <label>Enter X values</label><br>
+    <input type="text" name="x"><br><br>
+
+    <label>Enter Y values</label><br>
+    <input type="text" name="y"><br><br>
+
+    <button type="submit">Calculate</button>
+
+</form>
+
+{% if show %}
+
+<hr>
+
+<h2>{{ equation }}</h2>
+
+<p>MSE : {{ mse }}</p>
+<p>MAE : {{ mae }}</p>
+<p>R² : {{ r2 }}</p>
+
+<h3>Visualization</h3>
+
+<img src="{{ url_for('static', filename='graph.png') }}" width="500">
+
+{% endif %}
+
+</body>
+</html>
